@@ -22,6 +22,8 @@ else()
     set(ZSTD_CMAKE_POLICY_VERSION "${ZSTD_MAX_VALIDATED_CMAKE_MAJOR_VERSION}.${ZSTD_MAX_VALIDATED_CMAKE_MINOR_VERSION}.0") 
 endif()
 cmake_policy(VERSION ${ZSTD_CMAKE_POLICY_VERSION})
+#we need this policy to successfully build e.g. on iOS
+cmake_policy(SET CMP0006 OLD)
 
 set(CMAKE_BUILD_WITH_INSTALL_RPATH on)
 
